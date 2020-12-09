@@ -1,0 +1,40 @@
+<!-- Image du logement -->
+<aside class="col masthead text-center">
+    <img data-logementId="<?=$logementDetails['id_logement'];?>" src="images/<?=$logementDetails['picture_1'];?>" alt="<?=$logementDetails['titre'];?>">
+</aside>
+
+<!-- Présentation du logement -->
+<section class="col text-center align-self-center">
+    <h1><?=$logementDetails['titre'];?></h1>
+    <div class="mt-2 mb-4">
+        <span class="badge badge-secondary mb-2"><?=$logementDetails['cp'];?></span>
+        <span class="badge badge-secondary mb-2"><?=$logementDetails['surface'];?> m²</span>
+        <span class="badge badge-secondary mb-2"><?=$logementDetails['prix'];?>  €</span>
+        <span class="badge badge-secondary mb-2"><?=$logementDetails['label'];?></span>
+    </div>
+    <p><?=nl2br(substr($logementDetails['description'], 0, 300) . "...");?><a class="text-body" href="#descript">Voir plus</a></p>
+</section>
+
+<!-- Details de l'annonce -->
+<div class="col-12 mb-5">
+    <h3 class="text-center mt-5 mb-2">Détails de l'annonce</h3>
+    <hr>
+    <div class="row mt-5">
+        <div class="col-6 border-right">
+            <span>Bien : <?=$logementDetails['titre'];?></span>
+            <span class="d-block">Adresse : <?=$logementDetails['adresse'];?></span>
+            <span class="d-block">Ville : <?=$logementDetails['ville'];?></span>
+            <span class="d-block">Code Postal : <?=$logementDetails['cp'];?></span>
+        </div>
+        <div class="col-6">
+            <span>Prix : <?=$logementDetails['prix'];?> €</span>
+            <span class="d-block">Surface : <?=$logementDetails['surface'];?> m²</span>
+            <span class="d-block">Type de contrat : <?=$logementDetails['label'];?></span>
+        </div>
+        <div class="col-12">
+            <h3 id="descript" class="text-center mt-5 mb-2">Description du bien</h3>
+            <hr>
+            <p class="mt-5"><?=nl2br($logementDetails['description']);?></p>
+        </div>
+    </div>
+</div>
